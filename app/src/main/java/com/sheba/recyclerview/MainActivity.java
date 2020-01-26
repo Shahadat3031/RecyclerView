@@ -5,8 +5,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+
+import com.sheba.recyclerview.multipleViewtypes.MultipleViewTypes;
 
 import java.util.ArrayList;
 
@@ -16,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
-    RecyclerView recyclerView;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         mImageUrls.add("https://i.redd.it/k98uzl68eh501.jpg");
         mNames.add("Frozen Lake");
 
-
         mImageUrls.add("https://i.redd.it/glin0nwndo501.jpg");
         mNames.add("White Sands Desert");
 
@@ -70,7 +72,14 @@ public class MainActivity extends AppCompatActivity {
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this,mNames,mImageUrls);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+
 
     }
 
+    public void gotoMultipleViewTypes(View view) {
+
+        startActivity(new Intent(getApplicationContext(), MultipleViewTypes.class));
+
+    }
 }
