@@ -44,6 +44,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder: Called.");
 
+        //Image loader from online
         Glide.with(mContext)
                 .asBitmap()
                 .load(mImages.get(position))

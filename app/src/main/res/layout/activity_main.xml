@@ -2,25 +2,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <Button
-        android:onClick="gotoMultipleViewTypes"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="gotoMultipleViewTypes"
+        android:padding="16dp"
+        android:text="MultiView" />
+
+    <Button
         style="@style/Widget.AppCompat.Button.Colored"
-        android:text="MultiView"
-        android:padding="16dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="gotoBasicRecyclerView"
+        android:padding="16dp"
+        android:text="Basic RecyclerView" />
 
 
     <!--Container that will contain all the list items-->
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerView"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
